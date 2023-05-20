@@ -74,14 +74,7 @@ public class RssXmlReader {
 
 	public static void main(String[] args)
 			throws IllegalArgumentException, FeedException, IOException, ParserConfigurationException, SAXException {
-		// showNewsInfo();
-		// ReadExcelFile();
-		// ReadInvoices();
-		// RssXmlReader rsx = new RssXmlReader();
-		// System.out.println("--Call Excel Content With Return Statement-- ");
-		// System.out.println(rsx.getAllUni(all_uni));
-		// System.out.println(getAllUni() + "\n\n");
-		// atomReadUsingRome();
+		
 
 		String[] urls = { "https://feeds.bbci.co.uk/turkce/rss.xml", "https://www.cnnturk.com/feed/rss/turkiye/news",
 				"https://www.cumhuriyet.com.tr/rss", "https://www.hurriyet.com.tr/rss/anasayfa",
@@ -92,39 +85,15 @@ public class RssXmlReader {
 			System.out.println("h degeri :" + h);
 		}
 
-		// convertDateToString();
+		
 	}
-	/*
-	 * HashMap<String, String> denehash = new HashMap<String, String>();
-	 * denehash.put("Türkiye", "Ankara"); denehash.put("Fransa", "Paris");
-	 * denehash.put("İngiltere", "Londra");
-	 * 
-	 * Set s1 = denehash.entrySet(); Iterator i = s1.iterator();
-	 * 
-	 * System.out.println(denehash.get("Türkiye")); while (i.hasNext()) { Map.Entry
-	 * item = (Map.Entry) i.next(); System.out.println(item.getKey() + " => " +
-	 * item.getValue()); }
-	 */
+	
 
-//		cnnturkList.add("alp");
-//		cnnturkList.add("izmir");
-//		cnnturkMap.put("cnnturk", cnnturkList);
-//		cnnturkMap.put("cnnturk", cnnturkList);
-//		Set s = cnnturkMap.entrySet();
-//		Iterator i = s.iterator();
-//		while (i.hasNext()) {
-//			Map.Entry item = (Map.Entry) i.next();
-//			System.out.println(item.getKey() + " -> " + item.getValue());
-//		}
-	// boolean dene = StringUtils.containsIgnoreCase("Fırat Üniversitesi", "fırat");
-	// System.out.println(dene);
 
-	// convertDateToString();
-	// convertDateToStrng();
 
 	public static void convertDateToString() {
 		LocalDateTime myDateObj = LocalDateTime.of(2021, 8, 27, 16, 20);
-//		System.out.println("before formatting  : " + myDateObj);
+
 		DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 		String formattedDate = myDateObj.format(myFormatObj);
 
@@ -151,7 +120,7 @@ public class RssXmlReader {
 
 	public static void atomReadUsingRome(String urlAddress)
 			throws IOException, ParserConfigurationException, SAXException {
-		// https://dzone.com/articles/reading-atom-fee
+		
 	}
 
 	public static void showNewsInfo(String urlAddress) throws IOException, ParserConfigurationException, SAXException {
@@ -159,7 +128,8 @@ public class RssXmlReader {
 		 * 1)https://feeds.bbci.co.uk/turkce/rss.xml
 		 * 2)https://www.birgun.net/xml/rss.xml
 		 * 3)https://www.cnnturk.com/feed/rss/turkiye/news
-		 * 4)https://www.cumhuriyet.com.tr/rss 5)https://www.haberturk.com/rss
+		 * 4)https://www.cumhuriyet.com.tr/rss 
+		 * 5)https://www.haberturk.com/rss
 		 * 6)https://www.hurriyet.com.tr/rss/anasayfa
 		 * 7)https://www.internethaber.com/rss
 		 * 8)https://www.milliyet.com.tr/rss/rssnew/dunyarss.xml
@@ -225,11 +195,7 @@ public class RssXmlReader {
 				System.out.println("Haber pubDate: " + rssnewsf.getPubDate());
 
 				System.out.println("-----------------------------------");
-				// Bu işlemleri tek bir java dosyasında ve get set metodları kullanarak yapmam
-				// gerekiyor.
-				// SearchUniFromNews(fLink, "Fırat");
-				// SearchUniFromNews(fTitle, "Fırat");
-				// SearchUniFromNews(fDesc, "Fırat");
+				
 				String str = StringUtils.substring(fDesc, 0);
 				String str1 = StringUtils.substring(fTitle, 0);
 				String link = StringUtils.substring(fLink, 0);
@@ -368,7 +334,6 @@ public class RssXmlReader {
 
 //----------------------------------------
 	public static void ReadInvoices() {
-		// C:\Users\ALPARSLAN\Desktop\deneme.xlsx
 		// C:\\Users\\ALPARSLAN\\Downloads\\Universite_Listesi.xlsx
 		final String NAME = "C:\\Users\\ALPARSLAN\\Desktop\\deneme.xlsx";
 		try {
@@ -376,8 +341,6 @@ public class RssXmlReader {
 			Workbook workbook = new XSSFWorkbook(file);
 			DataFormatter dataFormatter = new DataFormatter();
 			Iterator<Sheet> sheets = workbook.sheetIterator();
-
-			// ArrayList<String> all_uni = new ArrayList<String>();
 
 			while (sheets.hasNext()) {
 				Sheet sh = sheets.next();
@@ -392,9 +355,7 @@ public class RssXmlReader {
 					while (cellIterator.hasNext()) {
 						Cell cell = cellIterator.next();
 						String cellValue = dataFormatter.formatCellValue(cell);
-						// if (cell.getCellType() == CellType.STRING) {
-						//
-						// }
+						
 						System.out.println(cellValue + "");
 						all_uni.add(cellValue);
 					}
@@ -414,7 +375,7 @@ public class RssXmlReader {
 
 //----------------------------------------
 	public static ArrayList<String> getAllUni() {
-		// C:\Users\ALPARSLAN\Desktop\deneme.xlsx
+		
 		// C:\\Users\\ALPARSLAN\\Downloads\\Universite_Listesi.xlsx
 		final String NAME = "C:\\Users\\ALPARSLAN\\Desktop\\deneme.xlsx";
 		ArrayList<String> strArray = new ArrayList<String>();
@@ -452,13 +413,11 @@ public class RssXmlReader {
 //----------------------------------------
 
 //----------------------------------------
-	// İstanbul Medipol Ünviversitesinden sonra büyük boşluklar birakarak ekrana
-	// yazdırıyor.Bu sıkıntı
+	
 	public static void ReadExcelFile() throws EncryptedDocumentException, FileNotFoundException, IOException {
 		Workbook workbook = WorkbookFactory
 				.create(new FileInputStream("C:\\Users\\ALPARSLAN\\Downloads\\Universite_Listesi.xlsx"));
-		// Workbook workbook = WorkbookFactory.create(new
-		// FileInputStream("./inputFile.xls"));
+		
 		DataFormatter formatter = new DataFormatter();
 		FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
 		Sheet sheet = workbook.getSheetAt(0);
@@ -470,11 +429,9 @@ public class RssXmlReader {
 		for (Row row : filteredRows) {
 			for (Cell cell : row) {
 				System.out.print(formatter.formatCellValue(cell, evaluator));
-				// System.out.print(cell.getAddress() + ":" + formatter.formatCellValue(cell,
-				// evaluator));
-				// System.out.print(" ");
+				
 				all_uni.add(formatter.formatCellValue(cell, evaluator));
-				// System.out.println("\nCell Value : " + cell);
+				
 			}
 			// System.out.println();
 		}
