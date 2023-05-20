@@ -6,9 +6,7 @@ import java.sql.DriverManager;
 import com.mysql.jdbc.PreparedStatement;
 
 public class MysqlCon {
-	// static Connection con = null;
-	// static Statement st = null;
-	// static ResultSet rs = null;
+	
 
 	RssXmlReader rss = new RssXmlReader();
 
